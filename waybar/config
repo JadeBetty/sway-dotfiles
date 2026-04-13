@@ -1,29 +1,56 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
-    "margin-top": 5,
-    "margin-left": 10,
-    "margin-right": 10,
-    "spacing": 10,
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "battery", "tray"],
+    "height": 30,
+    "spacing": 0,
+    "modules-left": ["sway/workspaces","sway/mode"],
+    "modules-center": ["custom/clock"],
+    "modules-right": ["sway/language", "pulseaudio", "battery", "backlight", "tray"],
 
     "sway/workspaces": {
         "disable-scroll": true,
-        "format": "{name}"
+        "format": "{icon}{name}",
+        "format-icons": {
+            "default": "",
+            "urgent": "!",
+            "focused": ""
+        }
     },
-    "clock": {
-        "format": "{:%H:%M  -  %A, %b %d}"
+
+    "sway/mode": {
+        "format": "  {}"
     },
-    "battery": {
-        "format": "bat: {capacity}%"
+
+    "custom/clock": {
+        "format": "<span color='#45475a'>[ </span>{text}<span color='#45475a'> ]</span>",
+        "exec": "date +'%H:%M %A, %b %d' | awk '{print tolower($0)}'",
+        "interval": 3
     },
+
+    "sway/language": {
+        "format": "<span color='#45475a'>[ </span><span color='#b4befe'><b>key: </b></span>{short}<span color='#45475a'> / </span>",
+        "tooltip": false
+    },
+
     "pulseaudio": {
-        "format": "vol: {volume}%"
+        "format-muted": "<span color='#b4befe'><b>vol:</b></span> {volume}% (m)"
     },
-    "network": {
-        "format-wifi": "wifi: {essid}",
-        "format-disconnected": "disconnected"
+    
+    "battery": {
+        "format": "<span color='#45475a'> / </span><span color='#b4befe'><b>bat:</b></span> {capacity}%",
+        "format-charging": "<span color='#45475a'> / </span><span color='#b4befe'><b>ac:</b></span> {capacity}%",
+        "tooltip": false,
+        "interval": 20
+    },
+
+    "backlight": {
+        "format": "<span color='#45475a'> / </span><span color='#b4befe'><b>mon:</b></span> {percent}%<span color='#45475a'> ]</span>",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 7,
+        "tooltip": false
     }
 }

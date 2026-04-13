@@ -20,7 +20,11 @@
     "terminal",
     //"terminalfont",
     "cpu",
-    "gpu",
+    {
+      "type": "gpu",
+      "key": "GPU",
+      "format": "{2}"
+    },
     "memory",
     //"swap",
     //"disk",
