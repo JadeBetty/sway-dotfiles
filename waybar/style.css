@@ -1,0 +1,37 @@
+* {
+    font-family: "JetBrains Mono", "Font Awesome 6 Free";
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background: rgba(30, 30, 46, 0.5); /* Transparent background */
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 8px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: #f5c2e7;
+}
+
+#workspaces button.focused {
+    color: #cba6f7;
+    background-color: rgba(203, 166, 247, 0.2);
+    border-radius: 5px;
+}
+
+#clock, #battery, #pulseaudio, #network, #tray {
+    padding: 0 10px;
+    margin: 0 5px;
+    color: #f5c2e7;
+}
+
+/* Specific color for the clock to make it pop */
+#clock {
+    color: #cba6f7;
+    font-weight: bold;
+}

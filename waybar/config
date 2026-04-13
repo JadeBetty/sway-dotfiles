@@ -1,0 +1,29 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-top": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 10,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "battery", "tray"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}"
+    },
+    "clock": {
+        "format": "{:%H:%M  -  %A, %b %d}"
+    },
+    "battery": {
+        "format": "bat: {capacity}%"
+    },
+    "pulseaudio": {
+        "format": "vol: {volume}%"
+    },
+    "network": {
+        "format-wifi": "wifi: {essid}",
+        "format-disconnected": "disconnected"
+    }
+}

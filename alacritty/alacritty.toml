@@ -1,0 +1,23 @@
+[window.padding]
+x = 20
+y = 20
+
+[window]
+opacity = 0.8
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular" 
+
+[font]
+size = 14.0
+
+[colors.primary]
+background = '#1e1e2e'
+foreground = '#cdd6f4' 
+
+[colors.normal]
+black = '#45475a'
+red = '#f38ba8' 
+green = '#a6e3a1'
+
