@@ -28,14 +28,23 @@
     },
 
     "sway/language": {
-        "format": "<span color='#45475a'>[ </span><span color='#b4befe'><b>key: </b></span>{short}<span color='#45475a'> / </span>",
+        "format": "<span color='#45475a'>[ </span><span color='#b4befe'><b>key: </b></span>{short}",
         "tooltip": false
     },
 
     "pulseaudio": {
-        "format-muted": "<span color='#b4befe'><b>vol:</b></span> {volume}% (m)"
+        "format": "<span color='#45475a'> / </span><span color='#b4befe'><b>{icon}:</b></span> {volume}%",
+        "format-muted": "<span color='#45475a'> / </span><span color='#b4befe'><b>{icon}:</b></span> {volume}%",
+        "format-icons": {
+            "headphone": "iem",
+            "hands-free": "iem",
+            "headset": "iem",
+            "default": ["vol", "iem"] 
+        },
+        "on-click": "pavucontrol",
+        "tooltip-format": "{desc}"
     },
-    
+
     "battery": {
         "format": "<span color='#45475a'> / </span><span color='#b4befe'><b>bat:</b></span> {capacity}%",
         "format-charging": "<span color='#45475a'> / </span><span color='#b4befe'><b>ac:</b></span> {capacity}%",
@@ -46,6 +55,13 @@
     "backlight": {
         "format": "<span color='#45475a'> / </span><span color='#b4befe'><b>mon:</b></span> {percent}%<span color='#45475a'> ]</span>",
         "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "<span color='#45475a'> / </span><span color='#b4befe'><b>net:</b></span> up",
+        "format-ethernet": "<span color='#45475a'> / </span><span color='#b4befe'><b>net:</b></span> eth",
+        "format-disconnected": "<span color='#45475a'> / </span><span color='#b4befe'><b>net:</b></span> down",
+        "tooltip-format": "{essid} {signalStrength}%"
     },
 
     "tray": {

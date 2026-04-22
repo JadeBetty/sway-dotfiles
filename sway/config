@@ -19,7 +19,13 @@ set $term alacritty
 set $menu wofi --show drun
 
 include /etc/sway/config-vars.d/*
+output * bg ~/Pictures/gay.jpg fill
 
+input "type:keyboard" {
+    xkb_layout "us,kh"
+#    xkb_variant ",nida"
+    xkb_options "grp:alt_shift_toggle"
+  }
 
 ### Output configuration
 #
@@ -247,5 +253,21 @@ default_floating_border pixel 2
 smart_gaps on
 smart_borders on
 
+# Remove title bars and borders by default
+# default_border pixel 2
+
+# Force inactive windows to have a border size of 0
+# Sway doesn't support "border pixel 0" for inactive windows natively, 
+# so we make them invisible by matching your terminal background exactly:
+client.unfocused        #1e1e2e00 #1e1e2e00 #cdd6f4 #1e1e2e00 #1e1e2e00
+client.focused_inactive #1e1e2e00 #1e1e2e00 #cdd6f4 #1e1e2e00 #1e1e2e00
+
+
+# Set border to 0 for all windows initially
+#for_window [class=".*"] border pixel 0
+
+# Set border to 2 (or whatever size you like) only for the focused window
+# This requires a script or a specific bind, but a simpler way is:
+#hide_edge_borders --always
 
 include /etc/sway/config.d/*
