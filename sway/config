@@ -9,7 +9,7 @@ set $down j
 set $up k
 set $right l
 set $term alacritty
-set $menu wofi --show drun
+set $menu wofi --show drun -c ~/.config/wofi/config -s ~/.config/wofi/style.css
 
 #Background picture
 output * bg ~/Pictures/gay.jpg fill
@@ -38,7 +38,6 @@ bindsym $mod+q kill
 bindsym $mod+d exec $menu
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -112,7 +111,8 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 #screenshot tools
-bindsym Print exec grim
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Print exec grim ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).png && wl-copy < ~/Pictures/$(date +%Y-%m-%d_%H-%m-%s).png
 
 #waybar my love
 bar {
