@@ -1,0 +1,16 @@
+show=run
+width=30%
+height=400
+location=center
+always_parse_args=true
+show_icons=true
+filter_rate=100
+allow_images=true
+insensitive=true
+prompt=Search...
+layout=hbox
+image_size=24
+no_actions=true
+print_command=true
+style=~/.config/wofi/style.css
+hide_scroll=true
